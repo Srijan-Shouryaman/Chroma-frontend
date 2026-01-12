@@ -82,9 +82,9 @@ body {
 .workspace {
     flex: 7; height: 100%; 
     background: rgb(255, 255, 255);
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.243);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.521);
     display: flex; justify-content: center; align-items: center;
 }
 

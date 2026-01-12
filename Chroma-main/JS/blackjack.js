@@ -62,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const cardDiv = document.createElement("div");
         cardDiv.classList.add("card");
         
-        // Add suit class for coloring
         if (card.suit === "♥") cardDiv.classList.add("hearts");
         else if (card.suit === "♦") cardDiv.classList.add("diamonds");
         else if (card.suit === "♠") cardDiv.classList.add("spades");
@@ -79,7 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Render Player
         playerHand.forEach(card => renderCard(card, playerCards));
-        playerScoreEl.innerText = `SCORE: ${calculateScore(playerHand)}`;
+        // FIX: Removed "SCORE:" text so it just shows the number
+        playerScoreEl.innerText = calculateScore(playerHand);
 
         // Render Dealer
         dealerHand.forEach((card, index) => {
@@ -96,10 +96,15 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
+        // FIX: Update Dealer Score Logic
         if (revealDealer) {
-            dealerScoreEl.innerText = `SCORE: ${calculateScore(dealerHand)}`;
+            dealerScoreEl.innerText = calculateScore(dealerHand);
         } else {
-            dealerScoreEl.innerText = `SCORE: ?`;
+            // Option A: Show "?"
+             dealerScoreEl.innerText = "?";
+             
+            // Option B: If you prefer to show the score of the visible card only:
+            // dealerScoreEl.innerText = getCardValue(dealerHand[1]);
         }
     }
 
@@ -109,8 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (pScore > 21) {
             endGame("BUST! YOU LOSE.");
         } else if (pScore === 21 && playerHand.length === 2) {
-            // Check if dealer also has BJ
-            /* simplified for visualizer demo */
             endGame("BLACKJACK! YOU WIN!");
         }
     }
@@ -126,11 +129,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- ACTIONS ---
     function startNewGame() {
         gameOver = false;
-        createDeck();
+        createDeck(); // Create a fresh deck every game
         playerHand = [deck.pop(), deck.pop()];
         dealerHand = [deck.pop(), deck.pop()];
         
-        messageEl.innerText = "";
+        messageEl.innerText = "HIT OR STAND?";
         btnHit.disabled = false;
         btnStand.disabled = false;
         btnDeal.disabled = true;
@@ -172,4 +175,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnDeal.addEventListener("click", startNewGame);
 });
-

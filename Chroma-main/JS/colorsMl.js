@@ -7,7 +7,6 @@ const colored = [
   "rgba(255, 0, 0,0.8)",    // red
   "rgba(0, 255, 255,0.8)",   // cyan
   "rgba(255, 255, 255,0.8)", // white
-  "rgba(138, 43, 226,0.8)",  // violet
   "rgba(0, 255, 0,0.8)"      // green
 ];
 
@@ -140,8 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         textBottom.classList.add("hidden");
 
-        clearCalibrationTimers();
-        if(calibrationText) calibrationText.innerText = "SYSTEM CALIBRATING..."; 
+        clearCalibrationTimers(); 
       });
   }
 

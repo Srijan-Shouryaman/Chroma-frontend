@@ -13,7 +13,7 @@
     flex-direction: column;
     justify-content: space-between;
     font-family: "Tiny5", sans-serif;
-    color: #ffffff;
+    color: #000000;
     position: relative; /* Essential for absolute positioning of HUD scores */
 }
 
@@ -23,7 +23,7 @@
     top: 25px; /* Distance from the top edge */
     font-size: 28px;
     letter-spacing: 2px;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.548);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.548);
     z-index: 10;
     pointer-events: none; /* Let clicks pass through if needed */
 }
@@ -61,8 +61,8 @@
     width: 85px;
     height: 125px;
     
-    background: rgba(0, 0, 0, 0.5);
-    border: 3px solid #ffffff;
+    background: white;
+    border: 3px solid #000000;
     border-radius: 8px;
     
     display: flex;
@@ -81,7 +81,7 @@
 /* Suit Colors: Hearts & Diamonds (Neon Red) */
 .card.hearts, .card.diamonds {
     color: #ff0055;
-    border-color: #ffffff;
+    border-color: #000000;
     box-shadow: 0 0 10px rgba(255, 0, 85, 0.3);
 }
 
@@ -93,8 +93,8 @@
     justify-content: center;
     
     font-size: 28px;
-    text-shadow: 0 0 10px currentColor;
-    color: white;
+    text-shadow: 0 0 1px currentColor;
+    color: rgb(0, 0, 0);
     letter-spacing: 3px;
     text-transform: uppercase;
 }
@@ -111,9 +111,9 @@
     font-family: "Tiny5", sans-serif;
     font-size: 22px;
     
-    background: transparent;
-    border: 2px solid #ffffff;
-    color: #ffffff;
+    background: #ffffff;
+    border: 2px solid #000000;
+    color: #000000;
     
     padding: 10px 30px;
     cursor: pointer;
@@ -122,15 +122,14 @@
 }
 
 .game-btn:hover:not(:disabled) {
-    background: #ffffff;
     color: black;
     box-shadow: 0 0 20px #ffffff;
 }
 
 .game-btn:disabled {
     opacity: 0.3;
-    border-color: #e6e6e6;
-    color: #fffafa;
+    border-color: #000000;
+    color: #000000;
     cursor: default;
 }
 
