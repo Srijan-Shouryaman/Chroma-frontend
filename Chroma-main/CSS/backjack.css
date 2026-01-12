@@ -1,3 +1,8 @@
+.workspace {
+  background-color: var(--workspace-bg);
+  transition: background-color 0.6s ease;
+}
+
 /* --- BLACKJACK CONTAINER --- */
 #blackjack-game {
     width: 100%;
@@ -8,7 +13,7 @@
     flex-direction: column;
     justify-content: space-between;
     font-family: "Tiny5", sans-serif;
-    color: #3BC1A8;
+    color: #ffffff;
     position: relative; /* Essential for absolute positioning of HUD scores */
 }
 
@@ -18,7 +23,7 @@
     top: 25px; /* Distance from the top edge */
     font-size: 28px;
     letter-spacing: 2px;
-    text-shadow: 0 0 5px rgba(59, 193, 168, 0.5);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.548);
     z-index: 10;
     pointer-events: none; /* Let clicks pass through if needed */
 }
@@ -57,7 +62,7 @@
     height: 125px;
     
     background: rgba(0, 0, 0, 0.5);
-    border: 3px solid #3BC1A8;
+    border: 3px solid #ffffff;
     border-radius: 8px;
     
     display: flex;
@@ -68,7 +73,7 @@
     font-size: 38px;
     font-weight: bold;
     
-    box-shadow: 0 0 10px rgba(59, 193, 168, 0.3);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.726);
     animation: popIn 0.3s ease-out;
     user-select: none;
 }
@@ -76,7 +81,7 @@
 /* Suit Colors: Hearts & Diamonds (Neon Red) */
 .card.hearts, .card.diamonds {
     color: #ff0055;
-    border-color: #ff0055;
+    border-color: #ffffff;
     box-shadow: 0 0 10px rgba(255, 0, 85, 0.3);
 }
 
@@ -107,8 +112,8 @@
     font-size: 22px;
     
     background: transparent;
-    border: 2px solid #3BC1A8;
-    color: #3BC1A8;
+    border: 2px solid #ffffff;
+    color: #ffffff;
     
     padding: 10px 30px;
     cursor: pointer;
@@ -117,15 +122,15 @@
 }
 
 .game-btn:hover:not(:disabled) {
-    background: #3BC1A8;
+    background: #ffffff;
     color: black;
-    box-shadow: 0 0 20px #3BC1A8;
+    box-shadow: 0 0 20px #ffffff;
 }
 
 .game-btn:disabled {
     opacity: 0.3;
-    border-color: #555;
-    color: #555;
+    border-color: #e6e6e6;
+    color: #fffafa;
     cursor: default;
 }
 
@@ -133,4 +138,26 @@
 @keyframes popIn {
     0% { transform: scale(0.5); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
+}
+
+/* Container alignment */
+.second-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Space between spinner and text */
+}
+
+/* The Spinner Animation */
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }

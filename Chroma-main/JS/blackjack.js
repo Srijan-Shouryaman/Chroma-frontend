@@ -1,3 +1,5 @@
+'use strict';
+
 document.addEventListener("DOMContentLoaded", () => {
     // --- ELEMENTS ---
     const dealerCards = document.getElementById("dealer-cards");
@@ -170,3 +172,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     btnDeal.addEventListener("click", startNewGame);
 });
+

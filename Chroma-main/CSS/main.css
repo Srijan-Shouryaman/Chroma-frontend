@@ -81,12 +81,11 @@ body {
 /* Workspace Box (Right Side) */
 .workspace {
     flex: 7; height: 100%; 
-    background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(59, 193, 168, 0.3);
+    background: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.243);
     display: flex; justify-content: center; align-items: center;
-    backdrop-filter: blur(5px);
 }
 
 
@@ -133,5 +132,7 @@ body {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none;
 }
